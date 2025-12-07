@@ -1,0 +1,65 @@
+---
+title: "SEMANA 12"
+author: "ANDREA YASUMI CASTILLA CUNYA"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## SEMANA 12
+
+**CALCULAR LAS MEDIDAS DE DISPERSIÓN (VARIANZA, DESVIACIÓN ESTÁNDAR, RANGO, RANGO INTERCUARTÍLICO) Y DE POSICIÓN (CUARTILES), SCRIPT PARA VISUALIZAR LAS 6 PRIMERAS FILAS, Y PARA PODER VISUALIZAR UN RESUMEN DE DICHAS MEDIDAS**
+
+```{r}
+#IMPORTANDO LA BASE DE DATO
+data<- read_csv("C:/Users/andre/Downloads/s13_hemodialisis.csv")
+```
+
+```{r}
+#VER LAS 6 PRIMERAS FILAS
+head(data)
+
+```
+
+```{r}
+#ESTRUCTURA DE DATA 
+str(data)
+```
+
+```{r}
+
+#RESUMEN DE UNA VARIABLE ESPECIFICA
+summary(data$Edad)
+
+#RESUMEN DE TODAS LAS VARIABLES 
+summary(data)
+```
+
+```{r}
+#MEDIDAS DE DISPERSION
+#VARIANZA
+var(data$Edad,na.rm = TRUE)
+```
+
+```{r}
+#DESVICION ESTANDAR
+sd(data$Edad,na.rm = TRUE)
+```
+
+```{r}
+#RANGO
+range(data$Edad,na.rm = TRUE)
+```
+
+```{r}
+#RANGO INTERCUARTILLO
+IQR(data$Edad,na.rm = TRUE)
+```
+
+```{r}
+#MEDIDAS DE POSICION 
+quantile(data$Edad, probs = c(0.25,0.5,0.75,0.90),na.rm = TRUE)
+```
