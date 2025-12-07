@@ -1,0 +1,48 @@
+---
+title: "semana10.1"
+author: "ANDREA YASUMI CASTILLA CUNYA"
+format: html
+editor: visual
+---
+
+## SEMANA 10
+
+**CALCULAR LAS MEDIDAS DE TENDENCIA CENTRAL (MEDIA ARITMÉTICA, MEDIANA, MODA)**
+
+1.Vamos a calcular la Media Aritmética
+
+```{r}
+#IMPORTANDO LA BASE DE DATO
+data<- read_csv("C:/Users/andre/Downloads/s13_hemodialisis.csv")
+```
+
+```{r}
+#VER LAS 6 PRIMERAS FILAS
+head(data)
+```
+
+```{r}
+#ESTRUCTURA DE DATA 
+str(data)
+```
+
+```{r}
+#MEDIDA ARITMERICA 
+mean(data$Plaquetas)
+
+```
+
+2\. Vamos a calcular la Mediana
+
+```{r}
+
+#MEDIANA
+median(data$Plaquetas)
+```
+
+3.Vamos hallar la Moda
+
+```{r}
+#MODA
+mode_plaquetas<-names(sort(table(data$Plaquetas),decreasing = TRUE))
+```
